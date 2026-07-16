@@ -1,18 +1,53 @@
-# mapsted_flutter_example
+# Mapsted Sample App — Flutter
 
-Demonstrates how to use the mapsted_flutter plugin.
+A Flutter sample application demonstrating how to integrate the **Mapsted Mobile SDK** (indoor
+positioning, mapping, wayfinding, and location-based services) via the `mapsted_flutter` plugin.
+Built against the current **Mapsted SDK 26.7.1** release.
 
-## Getting Started
+A sample Mapsted licence file is included, providing access to the **Square One Shopping Centre**
+(propertyId `504`) so you can run the app out of the box.
 
-This project is a starting point for a Flutter application.
+## Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+| | Minimum |
+|---|---|
+| Flutter | 3.x (stable) |
+| Android `minSdkVersion` | **26** |
+| iOS deployment target | **16.0** |
+| JDK | 17 |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The sample consumes the `mapsted_flutter` plugin pinned to `v26.7.1` (see `pubspec.yaml`). Android
+artifacts resolve from `https://mapstedhq.github.io/mapsted-android-maven`; iOS pods resolve from
+`https://github.com/MapstedHQ/podspec.git`.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Setup
 
-# dart run mapsted_flutter:create
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/MapstedHQ/MapstedSampleFlutter.git
+   cd MapstedSampleFlutter
+   ```
+2. Fetch dependencies:
+   ```bash
+   flutter pub get
+   ```
+3. Ensure the Mapsted licence files are in place:
+   - Android: `android/app/src/main/assets/demo_android_licence.key`
+   - iOS: `ios/your_ios_license.key`
+
+   The included sample licences cover Square One (propertyId `504`); use your own licence keys for
+   your own properties.
+4. Run on a connected device or emulator (Android API 26+ / iOS 16+):
+   ```bash
+   flutter run
+   ```
+
+## Documentation
+
+Full integration guides, the Flutter getting-started tutorial, and API references are available at
+[developer.mapsted.com/mobile-sdk](https://developer.mapsted.com/mobile-sdk/).
+
+## Licence
+
+This sample and the Mapsted Mobile SDK are distributed under the Mapsted proprietary licence — see
+[`LICENSE`](LICENSE). All rights reserved.
